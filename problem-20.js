@@ -11,11 +11,11 @@ const isValid = function (s) {
       if (!stack.length) return false;
       const top = stack.pop();
       if (
-        (top === "(" && element === ")") ||
-        (top === "{" && element === "}") ||
-        (top === "[" && element === "]")
+        (top !== "(" && element === ")") ||
+        (top !== "{" && element === "}") ||
+        (top !== "[" && element === "]")
       ) {
-        return true;
+        return false;
       }
     }
   }
